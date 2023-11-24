@@ -1,0 +1,56 @@
+<nz-breadcrumb>
+    <nz-breadcrumb-item>Datos maestros</nz-breadcrumb-item>
+</nz-breadcrumb>
+  
+<div class="inner-content">
+
+    <h1>Datos de configuración</h1>
+    
+    <div class="flex-space-between">
+        <nz-select 
+            nzShowSearch 
+            nzAllowClear            
+            nzPlaceHolder="Selecione una tabla" 
+            >
+                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+        </nz-select>
+
+        <button 
+            nz-button nzType="primary" >
+            <span nz-icon nzType="plus-square" nzTheme="twotone"></span>
+            NUEVO
+        </button>
+    </div>
+
+    <nz-table #basicTable [nzData]="listOfData">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Orden</th>
+            <th>Código</th>
+            <th>Campo</th>
+            <th>Editable</th>
+            <th>Activo</th>
+            <th>Opc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.name }}</td>
+            <td>{{ data.age }}</td>
+            <td>{{ data.address }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <a>Action 一 {{ data.name }}</a>
+              <nz-divider nzType="vertical"></nz-divider>
+              <a>Delete</a>
+            </td>
+          </tr>
+        </tbody>
+    </nz-table>
+
+</div>

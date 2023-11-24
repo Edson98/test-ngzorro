@@ -1,0 +1,97 @@
+<nz-layout class="app-layout">
+    <nz-sider class="menu-sidebar"
+      nzCollapsible
+      nzWidth="256px"
+      nzBreakpoint="md"
+      [(nzCollapsed)]="isCollapsed"
+      [nzTrigger]="null">
+
+      <div class="sidebar-logo">
+        <a href="https://ng.ant.design/" target="_blank">
+          <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+          <h1>Ant Design Of Angular</h1>
+        </a>
+      </div>
+
+      <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+        
+        <li
+          nz-menu-item
+          nz-tooltip
+          nzTooltipPlacement="right"
+          [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''"
+          
+        >
+          <span nz-icon nzType="mail"></span>
+          <span>Main</span>
+        </li>
+
+        @for(menu of list_menu; track menu) {
+
+          @if (menu.sub_menu) {
+
+            <li nz-submenu [nzTitle]="menu.name" [nzIcon]="menu.icon!">
+              <ul>
+
+                @for(submenu of menu.sub_menu; track submenu) {
+                  <li nz-menu-item>
+                    <a routerLink="/welcome">{{ submenu.name }}</a>
+                  </li>
+                }
+                
+              </ul>
+            </li>
+
+          } @else {
+            
+            <li
+              nz-menu-item
+              nz-tooltip
+              nzTooltipPlacement="right"
+              [nzTooltipTitle]="isCollapsed ? menu.name : ''"
+            >
+              <span nz-icon [nzType]="menu.icon!"></span>
+              <span>{{ menu.name }}</span>
+            </li>
+
+          }          
+        }
+               
+        <!--
+        <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+          <ul>
+            <li nz-menu-item nzMatchRouter>
+              <a>Basic Form</a> 
+            </li>
+          </ul>
+        </li>  
+        -->
+
+        
+      </ul>
+    
+    </nz-sider>
+
+    <nz-layout>
+      <nz-header>
+        <div class="app-header">
+          <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+              <span class="trigger"
+                 nz-icon
+                 [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+              ></span>
+          </span>
+        </div>
+      </nz-header>
+
+
+      <nz-content>
+        <router-outlet></router-outlet>
+      </nz-content>
+      
+      <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+
+
+    </nz-layout>
+</nz-layout>
+  
