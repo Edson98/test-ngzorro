@@ -20,7 +20,7 @@ interface Person {
 @Component({
   selector: 'app-maestras',
   standalone: true,
-  imports: [CommonModule, NzBreadCrumbModule, RouterOutlet, NzSelectModule, NzButtonModule, NzIconModule, NzSpaceModule, NzTableModule, NzDividerModule],
+  imports: [CommonModule, NzBreadCrumbModule, RouterOutlet, NzSelectModule, NzButtonModule, NzIconModule, NzSpaceModule, NzTableModule, NzDividerModule, ],
   templateUrl: './maestras.component.html',
   styleUrl: './maestras.component.css'
 })

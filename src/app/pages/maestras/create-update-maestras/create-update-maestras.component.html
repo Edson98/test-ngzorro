@@ -1,0 +1,69 @@
+<h2>{{ tittle }}</h2>
+
+<form nz-form [formGroup]="maestrasForm" class="login-form" (ngSubmit)="submitForm()">
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5">Tabla</nz-form-label>
+        <nz-form-control [nzSpan]="12"> <!-- nzValidateStatus="error" nzHasFeedback -->
+          <nz-select name="select-error" formControlName="table_name" nzPlaceHolder="Lista de tablas">
+            @for(option of table_options; track option.id) {
+                <nz-option [nzValue]="option.id" [nzLabel]="option.option"></nz-option>
+            }
+          </nz-select>
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5">Orden</nz-form-label>
+        <nz-form-control [nzSpan]="5">
+          <input nz-input formControlName="order" placeholder="Ejm. 1" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5">Código</nz-form-label>
+        <nz-form-control [nzSpan]="5">
+          <input nz-input formControlName="code" placeholder="Ejm. DEV" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5">Campo</nz-form-label>
+        <nz-form-control [nzSpan]="12" placeholder="Ejm. DEV" >
+          <input nz-input formControlName="attribute" placeholder="Ejm. DESARROLLO" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-control [nzSpan]="8" [nzOffset]="4">
+          <label nz-checkbox formControlName="isEditable">
+            Editable
+          </label>
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5">Editable</nz-form-label>
+        <nz-form-control [nzSpan]="8">
+            <label nz-checkbox formControlName="isEditable">                
+            </label>
+        </nz-form-control>
+    </nz-form-item>   
+    
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5">Activo</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+            <nz-switch formControlName="isActive" nzCheckedChildren="ON" nzUnCheckedChildren="OFF"></nz-switch>
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-control [nzOffset]="7" [nzSpan]="12">
+            <nz-space>
+                <button *nzSpaceItem nz-button >Cancelar</button>
+                <button *nzSpaceItem nz-button nzType="primary" [disabled]="!maestrasForm.valid">{{ button_text }}</button>
+            </nz-space>
+        </nz-form-control>
+    </nz-form-item>   
+        
+</form>

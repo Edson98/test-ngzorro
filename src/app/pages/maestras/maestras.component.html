@@ -5,8 +5,10 @@
 <div class="inner-content">
 
     <h1>Datos de configuración</h1>
-    
-    <div class="flex-space-between">
+
+    <nz-space nzDirection="vertical" nzSize="small" style="width: 100%;">
+     
+      <div *nzSpaceItem class="flex-space-between">
         <nz-select 
             nzShowSearch 
             nzAllowClear            
@@ -22,9 +24,9 @@
             <span nz-icon nzType="plus-square" nzTheme="twotone"></span>
             NUEVO
         </button>
-    </div>
+      </div>
 
-    <nz-table #basicTable [nzData]="listOfData">
+      <nz-table *nzSpaceItem #basicTable [nzData]="listOfData">
         <thead>
           <tr>
             <th>ID</th>
@@ -37,20 +39,22 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let data of basicTable.data">
-            <td>{{ data.name }}</td>
-            <td>{{ data.age }}</td>
-            <td>{{ data.address }}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <a>Action 一 {{ data.name }}</a>
-              <nz-divider nzType="vertical"></nz-divider>
-              <a>Delete</a>
-            </td>
-          </tr>
+          @for( data of basicTable.data; track data; let index = $index ) {
+            <tr>
+              <td>{{ index + 1 }}</td>
+              <td>{{ data.name }}</td>
+              <td>{{ data.age }}</td>
+              <td>{{ data.address }}</td>             
+              <td></td>
+              <td></td>
+              <td>
+                <a>Action 一 {{ data.name }}</a>
+                <nz-divider nzType="vertical"></nz-divider>
+                <a>Delete</a>
+              </td>
+            </tr>
+          }          
         </tbody>
-    </nz-table>
-
+      </nz-table>
+    </nz-space>
 </div>
