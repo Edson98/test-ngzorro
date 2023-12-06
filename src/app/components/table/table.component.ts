@@ -12,5 +12,7 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 })
 export class TableComponent {
   //@Input() columns_names: string[] = ['col_1', 'col_2' , 'col_3'];
+
+  listOfData : any[] = [];
  
 }

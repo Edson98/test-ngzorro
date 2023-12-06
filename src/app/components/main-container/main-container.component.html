@@ -9,10 +9,11 @@
 
         <nz-space nzDirection="vertical" nzSize="small" style="width: 100%;">
 
-            <ng-content select="top-table"></ng-content>
+            <!-- <ng-content select="top-table"></ng-content> -->
 
             <div *nzSpaceItem class="flex-space-between">
-                <nz-select 
+               
+                 <nz-select 
                     nzShowSearch 
                     nzAllowClear            
                     nzPlaceHolder="Selecione una tabla" 
@@ -21,34 +22,23 @@
                         <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
                         <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
                 </nz-select>
-                    <!-- [routerLink]="['../edit-create']"-->
+                   
                 <a 
                     
                     nz-button nzType="primary" >
                     <span nz-icon nzType="plus-square" nzTheme="twotone"></span>
                     NUEVO +
                 </a>
+               
             </div>
 
-            <app-table>
+            
+            <app-table>                
+                <h1 title> Hola </h1>
                 
-                <tr header-table>
-                    <th>ID</th>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Activo</th>
-                    <th>Opc</th>
-                </tr>
+                 
+                 
                 
-                <tr body-table>
-                    <td>ID</td>
-                    <td>Código</td>
-                    <td>Nombre</td>
-                    <td>Correo</td>
-                    <td>Activo</td>
-                    <td>Opc</td>
-                </tr>
             </app-table>  
 
         </nz-space>
