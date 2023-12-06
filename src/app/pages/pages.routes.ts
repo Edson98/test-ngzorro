@@ -8,14 +8,20 @@ export const PAGES_ROUTES: Routes = [
     path: '', 
     component: AdminComponent,
     children: [
+      {
+        path: '',
+        redirectTo: 'master',
+        pathMatch: 'full'
+      },
       { 
         path: 'master', 
-        component: MaestrasComponent 
+        component: MaestrasComponent
       },
       { 
-        path: 'edit-master', 
+        path: 'edit-create', 
         component: CreateUpdateMaestrasComponent 
       },
+      
     ]
   },
     

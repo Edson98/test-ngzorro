@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzSelectModule } from 'ng-zorro-antd/select';
@@ -20,7 +20,7 @@ interface Person {
 @Component({
   selector: 'app-maestras',
   standalone: true,
-  imports: [CommonModule, NzBreadCrumbModule, RouterOutlet, NzSelectModule, NzButtonModule, NzIconModule, NzSpaceModule, NzTableModule, NzDividerModule, ],
+  imports: [CommonModule, NzBreadCrumbModule, RouterOutlet, NzSelectModule, NzButtonModule, NzIconModule, NzSpaceModule, NzTableModule, NzDividerModule, RouterLink],
   templateUrl: './maestras.component.html',
   styleUrl: './maestras.component.css'
 })
