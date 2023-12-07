@@ -1,24 +1,26 @@
-<ng-content select="[title]"></ng-content>  
-
-<nz-table *nzSpaceItem #basicTable [nzData]="listOfData">
-
-       
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Código</th>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Activo</th>
-            <th>Opc</th>
-        </tr>
-    </thead> 
+<app-main-container [title]="'Hola titulo'">
+    <div  title class="flex-space-between">
+        <button>asd</button>
+        <button>asd</button>
+    </div>
     
-
-    <tbody> 
-        
-        
-              
-    </tbody>
-</nz-table>
+    <div table-data>
+        <nz-table #basicTable >
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Orden</th>
+                <th>Código</th>
+                <th>Campo</th>
+                <th>Editable</th>
+                <th>Activo</th>
+                <th>Opc</th>
+              </tr>
+            </thead>
+            <tbody>
+             
+            </tbody>
+          </nz-table>
+    </div>   
+</app-main-container>
 

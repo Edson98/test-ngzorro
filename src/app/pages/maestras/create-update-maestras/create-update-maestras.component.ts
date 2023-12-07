@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';
@@ -11,7 +10,7 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 
-import { MainContainerComponent } from '../../../components/main-container/main-container.component';
+import { TableComponent } from '../../../components/table/table.component';
 
 
 interface MaestrasForm {
@@ -27,7 +26,7 @@ interface MaestrasForm {
 @Component({
   selector: 'app-create-update-maestras',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NzFormModule, NzSelectModule, NzInputModule, NzCheckboxModule, NzSwitchModule, NzButtonModule, NzSpaceModule, MainContainerComponent ],
+  imports: [CommonModule, ReactiveFormsModule, NzFormModule, NzSelectModule, NzInputModule, NzCheckboxModule, NzSwitchModule, NzButtonModule, NzSpaceModule, TableComponent ],
   templateUrl: './create-update-maestras.component.html',
   styleUrl: './create-update-maestras.component.css'
 })

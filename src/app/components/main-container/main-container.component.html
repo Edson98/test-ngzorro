@@ -8,38 +8,10 @@
         <h2>{{ title }}</h2>
 
         <nz-space nzDirection="vertical" nzSize="small" style="width: 100%;">
+           
+            <ng-content *nzSpaceItem select="[title]"></ng-content>  
 
-            <!-- <ng-content select="top-table"></ng-content> -->
-
-            <div *nzSpaceItem class="flex-space-between">
-               
-                 <nz-select 
-                    nzShowSearch 
-                    nzAllowClear            
-                    nzPlaceHolder="Selecione una tabla" 
-                    >
-                        <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
-                        <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
-                        <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
-                </nz-select>
-                   
-                <a 
-                    
-                    nz-button nzType="primary" >
-                    <span nz-icon nzType="plus-square" nzTheme="twotone"></span>
-                    NUEVO +
-                </a>
-               
-            </div>
-
-            
-            <app-table>                
-                <h1 title> Hola </h1>
-                
-                 
-                 
-                
-            </app-table>  
+            <ng-content *nzSpaceItem select="[table-data]"></ng-content>            
 
         </nz-space>
     </div>

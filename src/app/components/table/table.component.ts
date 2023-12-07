@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { MainContainerComponent } from '../main-container/main-container.component';
 
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [CommonModule, NzTableModule],
+  imports: [CommonModule, NzTableModule, MainContainerComponent],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
